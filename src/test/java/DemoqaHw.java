@@ -11,15 +11,16 @@ import static com.codeborne.selenide.Selenide.*;
 public class DemoqaHw {
     @BeforeAll
     static void setUp() {
+        Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com/automation-practice-form";
+        Configuration.baseUrl = "https://demoqa.com&quot";
     }
 
     @Test
     void testAddition() {
-        open("https://demoqa.com/automation-practice-form");
-        executeJavaScript("document.querySelector('#fixedban')?.remove();");
-        executeJavaScript("document.querySelector('footer')?.remove();");
+        open("/automation-practice-form");
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
 
         $("#firstName").setValue("Mata");
         $("#lastName").setValue("Alieva");
