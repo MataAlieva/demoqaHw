@@ -1,14 +1,13 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import pages.Registration;
+import pages.components.RegistrationPage;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static pages.Registration.firstNameLocator;
 
 public class DemoqaHw {
 
@@ -22,7 +21,7 @@ public class DemoqaHw {
         }
 
     @Test
-    void testAddition() {
+    void testAddition1() {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove();");
         executeJavaScript("$('#fixedban').remove();");
@@ -67,7 +66,7 @@ public class DemoqaHw {
         executeJavaScript("$('footer').remove();");
         executeJavaScript("$('#fixedban').remove();");
 
-        $(firstNameLocator).sendKeys("Mata");
+        $("#firstNameLocator").sendKeys("Mata");
         $("#lastName").setValue("Alieva");
         $("#userEmail").setValue("Mata@gmail.com");
         $(byText("Female")).click();

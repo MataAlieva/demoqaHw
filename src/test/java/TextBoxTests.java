@@ -1,21 +1,23 @@
 import org.junit.jupiter.api.Test;
 
-public class TextBoxTest extends TestBase{
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+
+public class TextBoxTests extends tests.TestBase {
     TextBoxPage textBoxPage = new TextBoxPage();
-    ChekComponentForTextBox chekComponentForTextBox = new CheckCompanentForTextBox();
+
     @Test
-    void textBoxTest(){
-        textBoxPage.open()
-                .setFirstName("Mata")
-                .setLastName("Alieva")
+    void textBoxTest() {
+        textBoxPage.open("/text-box")
+                .setUserName("Mata")
                 .setUserEmail("Mata@gmail.com")
-                .setGender("Female")
-                .setUserNumber("89269999999")
+                .setUserCurrentAddress("Moscow")
+                .setUserPermanentAddress("FFFFF")
                 .setSubmit()
-                .checkResult("Student Name", "Mata Alieva")
-                .checkResult("Student Email", "Mata@gmail.com")
-                .checkResult("Gender", "Female")
-                .checkResult("Mobile", "89269999999");
+                .checkResult("Name", "Mata")
+                .checkResult("Email", "Mata@gmail.com")
+                .checkResult("CurrentAddress", "Moscow")
+                .checkResult("PermanentAddress", "FFFFF");
 
     }
 }
