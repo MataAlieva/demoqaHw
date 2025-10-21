@@ -7,8 +7,8 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CheckComponent {
-    private SelenideElement checkResultInput = $("div.table-responsive");
-    private SelenideElement checkInput = $("#example-modal-sizes-title-lg");
+    private final SelenideElement checkResultInput = $("div.table-responsive");
+    private final SelenideElement checkInput = $("#example-modal-sizes-title-lg");
 
     public CheckComponent checkResult(String value) {
         checkResultInput.shouldHave(text(value));
