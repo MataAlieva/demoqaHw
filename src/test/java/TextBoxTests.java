@@ -1,10 +1,11 @@
+package tests;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TextBoxTests extends tests.TestBase {
-    TextBoxPage textBoxPage = new TextBoxPage();
+    pages.textBoxPage.TextBoxPage textBoxPage = new pages.textBoxPage.TextBoxPage();
 
     @Test
     void textBoxTest() {

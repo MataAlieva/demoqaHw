@@ -1,3 +1,5 @@
+package pages.textBoxPage;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import pages.components.RegistrationPage;
@@ -15,8 +17,8 @@ public class TextBoxPage {
             outputField = $("#output");
 
 
-    public TextBoxPage open(String value) {
-        open(value);
+    public TextBoxPage open(String url) {
+        Selenide.open(url);
         return this;
     }
 

@@ -1,8 +1,11 @@
+package pages.components;
 import com.codeborne.selenide.CheckResult;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Modal;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import pages.components.CheckComponent;
+import pages.components.CheckComponentTextBox;
 import pages.components.RegistrationPage;
 
 import static com.codeborne.selenide.Condition.text;
@@ -12,6 +15,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class DemoqaHwPageObjects extends tests.TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    CheckComponent modalComponent= new CheckComponent();
 
     @Test
     void testAddition() {

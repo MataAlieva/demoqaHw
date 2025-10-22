@@ -4,14 +4,17 @@ import pages.components.CalenderComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
+
     private final SelenideElement header = $("h1"),
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            genderWrapper = $("#gender"),
+            genderWrapper = $("#genderWrapper"),
             userNumberInput = $("#userNumber"),
             DateOfBirthInput = $("#DateOfBirth"),
             subjectsInput = $("#subjects"),
