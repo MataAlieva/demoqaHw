@@ -14,14 +14,14 @@ public class RegistrationPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            genderWrapper = $("#genderWrapper"),
+            genderWrapper = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
-            DateOfBirthInput = $("#DateOfBirth"),
-            subjectsInput = $("#subjects"),
-            hobbiesWrapperInput = $("#hobbies"),
-            uploadPictureInput = $("#Picture"),
+            dateOfBirthInput = $("#dateOfBirth"),
+            subjectsWrapper = $("#subjectsInput"),
+            hobbiesWrapperInput = $("#hobbiesWrapper"),
+            uploadPictureInput = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
-            stateInput = $("#state"),
+            stateInput = $("#stateCity-wrapper"),
             cityInput = $("#city"),
             submitInput = $("#submit");
 
@@ -30,9 +30,12 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration"));
-        executeJavaScript("$('footer').remove();");
-        executeJavaScript("$('#fixedban').remove();");
+        removeBanners();
         return this;
+    }
+    private  void removeBanners() {
+           executeJavaScript("$('footer').remove();");
+           executeJavaScript("$('#fixedban').remove();");
     }
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
@@ -55,13 +58,13 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
-        DateOfBirthInput.click();
+        dateOfBirthInput.click();
         calenderComponent.setDate(day, month, year);
 
         return this;
     }
     public RegistrationPage setSubjects(String value) {
-        subjectsInput.setValue(value).pressEnter();
+        subjectsWrapper.setValue(value).pressEnter();
         return this;
 
     }
@@ -71,7 +74,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setPicture(String value) {
-        uploadPictureInput.uploadFromClasspath("picture/");
+        uploadPictureInput.uploadFromClasspath("picture.jpg/");
         return this;
     }
 
@@ -81,12 +84,12 @@ public class RegistrationPage {
     }
     public RegistrationPage setState(String value) {
         stateInput.click();
-        stateInput.setValue(value).pressEnter();
+        $(byText(value)).click();
         return this;
     }
     public RegistrationPage setCity(String value) {
         cityInput.click();
-        cityInput.setValue(value).pressEnter();
+        $(byText(value)).click();
         return this;
     }
     public RegistrationPage setSubmit() {

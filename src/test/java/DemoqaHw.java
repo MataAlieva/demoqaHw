@@ -29,12 +29,11 @@ public class DemoqaHw {
         $("#firstName").setValue("Mata");
         $("#lastName").setValue("Alieva");
         $("#userEmail").setValue("Mata@gmail.com");
-        //    $("#genderWrapper").$(byText("Female"));
+        //    $("#genterWrapper").$(byText("Female"));
         $(byText("Female")).click();
         $("#userNumber").setValue("89269999999");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("November");
-        $(".react-datepicker__year-select").selectOption("1993");
         $(".react-datepicker__day--009:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $(byText("Sports")).click();

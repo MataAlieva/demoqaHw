@@ -25,7 +25,7 @@ public class DemoqaHwPageObjects extends tests.TestBase {
                 .setEmail("Mata@gmail.com")
                 .setGender("Female")
                 .setUserNumber("89269999999")
-                .setDateOfBirth("09", "Nov", "1993")
+                .setDateOfBirth("09", "November", "1993")
                 .setSubjects("Maths")
                 .setHobbies("Sports")
                 .setHobbies("Reading")
@@ -39,14 +39,12 @@ public class DemoqaHwPageObjects extends tests.TestBase {
                 .checkResult("Student Email", "Mata@gmail.com")
                 .checkResult("Gender", "Female")
                 .checkResult("Mobile", "89269999999")
-                .checkResult("DateOfBirth", "09 Nov 1993 ")
-                .checkResult( "Subjects", "Maths")
-                .checkResult("Hobbies", "Sports")
-                .checkResult("Hobbies", "Reading")
+                .checkResult("Date of Birth", "09 November, 1993 ")
+                .checkResult("Subjects", "Maths")
+                .checkResult("Hobbies", "Sports , Reading")
                 .checkResult("Picture", "picture.jpg")
                 .checkResult("Address", "Moscow")
-                .checkResult("State", "NCR")
-                .checkResult("City", "Delhi");
+                .checkResult("State and City", "NCR Delhi");
     }
 
     @Test
@@ -62,7 +60,7 @@ public class DemoqaHwPageObjects extends tests.TestBase {
         registrationPage.checkResult("Student Name", "Mata Alieva")
                 .checkResult("Student Email", "Mata@gmail.com")
                 .checkResult("Gender", "Female")
-                .checkResult("Mobile", "89269999999");
+                .checkResult("Mobile","89269999999");
     }
 
     @Test
