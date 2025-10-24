@@ -1,12 +1,9 @@
-package pages.components;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalenderComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
 
@@ -33,6 +30,7 @@ public class RegistrationPage {
         removeBanners();
         return this;
     }
+
     private  void removeBanners() {
            executeJavaScript("$('footer').remove();");
            executeJavaScript("$('#fixedban').remove();");
@@ -96,13 +94,6 @@ public class RegistrationPage {
         submitInput.click();
         return this;
     }
-
-    public RegistrationPage checkResult(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
-        return this;
-    }
-
 }
 
 

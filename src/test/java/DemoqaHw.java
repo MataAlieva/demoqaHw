@@ -1,4 +1,3 @@
-package pages.components;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -31,7 +30,7 @@ public class DemoqaHw {
         $("#userEmail").setValue("Mata@gmail.com");
         //    $("#genterWrapper").$(byText("Female"));
         $(byText("Female")).click();
-        $("#userNumber").setValue("89269999999");
+        $("#userNumber").setValue("8926999999");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("November");
         $(".react-datepicker__day--009:not(.react-datepicker__day--outside-month)").click();
