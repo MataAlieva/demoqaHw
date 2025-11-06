@@ -42,38 +42,40 @@ public class DemoqaHwRemote {
     @Tag("demoqa")
     void testAddition1() {
         step("Open form", () -> {
-                    open("/automation-practice-form");
-                    executeJavaScript("$('footer').remove();");
-                    executeJavaScript("$('#fixedban').remove();");
-                });
-        step("Fill form", () -> {
-                    $("#firstName").setValue("Mata");
-                    $("#lastName").setValue("Alieva");
-                    $("#userEmail").setValue("Mata@gmail.com");
-                    //    $("#genterWrapper").$(byText("Female"));
-                    $(byText("Female")).click();
-                    $("#userNumber").setValue("8926999999");
-                    $("#dateOfBirthInput").click();
-                    $(".react-datepicker__month-select").selectOption("November");
-                    $(".react-datepicker__day--009:not(.react-datepicker__day--outside-month)").click();
-                    $("#subjectsInput").setValue("Maths").pressEnter();
-                    $(byText("Sports")).click();
-                    $(byText("Reading")).click();
-                    $("#uploadPicture").uploadFromClasspath("picture.jpg");
-                    $("#currentAddress").setValue("Moscow");
-                    $("#state").click();
-                    $(byText("NCR")).click();
-                    $("#city").click();
-                    $(byText("Delhi")).click();
-                    $("#submit").scrollTo().click();
-                });
-        step("Verify results", () -> {
-            $(".modal-dialog").should(appear);
-            $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-            $(".table-responsive").shouldHave(text("Mata"), text("Alieva"),
-                    text("Mata@gmail.com"), text("8926999999"));
+            open("/automation-practice-form");
+            executeJavaScript("$('footer').remove();");
+            executeJavaScript("$('#fixedban').remove();");
         });
-                }
+        step("Fill form", () -> {
+            $("#firstName").setValue("Mata");
+            $("#lastName").setValue("Alieva");
+            $("#userEmail").setValue("Mata@gmail.com");
+            //    $("#genterWrapper").$(byText("Female"));
+            $(byText("Female")).click();
+            $("#userNumber").setValue("8926999999");
+            $("#dateOfBirthInput").click();
+            $(".react-datepicker__month-select").selectOption("November");
+            $(".react-datepicker__day--009:not(.react-datepicker__day--outside-month)").click();
+            $("#subjectsInput").setValue("Maths").pressEnter();
+            $(byText("Sports")).click();
+            $(byText("Reading")).click();
+            $("#uploadPicture").uploadFromClasspath("picture.jpg");
+            $("#currentAddress").setValue("Moscow");
+            $("#state").click();
+            $(byText("NCR")).click();
+            $("#city").click();
+            $(byText("Delhi")).click();
+            $("#submit").scrollTo().click();
+        });
+        step("Verify results", () -> {
+         $(".modal-dialog").should(appear);
+         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+         $(".table-responsive").shouldHave(text("Mata"), text("Alieva"),
+           text("Mata@gmail.com"), text("8926999999"));
+         });
+    }
+    }
+
 
     //    $("output").$("#firstName").shouldHave(text("Mata"));
     //    $("output").$("#lasttName").shouldHave(text("Alieva"));
@@ -86,4 +88,3 @@ public class DemoqaHwRemote {
     //    $("output").$("#Picture").shouldHave(text("picture.jpg"));
     //    $("output").$("#Address").shouldHave(text("Moscow"));
     //    $("output").$("#State and City").shouldHave(text("NCR Deihi"));
-    }
