@@ -51,3 +51,7 @@ task demoqa_test(type: Test) {
         includeTags("demoqa")
     }
 }
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+}
