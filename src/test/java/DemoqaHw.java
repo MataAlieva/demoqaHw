@@ -2,12 +2,9 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.files.DownloadActions.click;
 
 public class DemoqaHw {
 
@@ -56,5 +53,8 @@ public class DemoqaHw {
         $("output").$("#Picture").shouldHave(text("picture.jpg"));
         $("output").$("#Address").shouldHave(text("Moscow"));
         $("output").$("#State and City").shouldHave(text("NCR Deihi"));
+    }
+
+    public static class TestBaseRemote {
     }
 }
