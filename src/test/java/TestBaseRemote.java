@@ -12,6 +12,7 @@ public class TestBaseRemote {
     @BeforeAll
     static void beforeAll() {
 
+        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "127.0");
