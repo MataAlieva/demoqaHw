@@ -4,7 +4,7 @@ import pages.components.CheckComponent;
 
 import java.io.File;
 
-public class DemoqaHwPageObjectsFakerTest extends TestBase {
+public class DemoqaHwPageObjectsFakerTest extends TestBaseRemote {
 
     RegistrationPage registrationPage = new RegistrationPage();
     CheckComponent checkComponent = new CheckComponent();
